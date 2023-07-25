@@ -1,3 +1,4 @@
+// 1. Reverse text without using reverse() function
 const reverseText = (text) => {
   let reverse = "";
   for (let i = text.length - 1; i >= 0; i--) {
@@ -6,4 +7,16 @@ const reverseText = (text) => {
   console.log(reverse);
 };
 
-reverseText("hello world");
+// 2. Function that takes an array of numbers as input and returns the sum of all positive numbers in the array.
+const positiveNumberSum = (numberArray) => {
+  let positiveSum = 0;
+  for (i = 0; i < numberArray.length; i++) {
+    if (numberArray[i] >= 0) {
+      positiveSum = positiveSum + numberArray[i];
+    }
+  }
+  console.log(positiveSum);
+};
+
+// reverseText("hello world");
+positiveNumberSum([2, -5, 10, -3, 7]);
