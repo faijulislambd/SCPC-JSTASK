@@ -4,7 +4,7 @@ const reverseText = (text) => {
   for (let i = text.length - 1; i >= 0; i--) {
     reverse += text[i];
   }
-  console.log(`Reverse Text: '${text}' to '${reverse}'`);
+  console.log(`1) Reverse Text: '${text}' to '${reverse}'`);
 };
 
 // 2. Function that takes an array of numbers as input and returns the sum of all positive numbers in the array.
@@ -16,7 +16,7 @@ const positiveNumberSum = (numberArray) => {
     }
   }
   console.log(
-    `Summation of the positive number [${numberArray}] = ${positiveSum}`
+    `2) Summation of the positive number [${numberArray}] = ${positiveSum}`
   );
 };
 
@@ -42,7 +42,7 @@ const frequentlyRepeated = (numberArray) => {
     }
   }
   console.log(
-    `The most frequent element in the array [${numberArray}] is "${mostFrequentNumber}"`
+    `3) The most frequent element in the array [${numberArray}] is "${mostFrequentNumber}"`
   );
 };
 
@@ -53,7 +53,7 @@ const pairOfTargetValue = (sortedArray, targetValue) => {
       const sum = sortedArray[i] + sortedArray[j];
       if (sum === targetValue) {
         console.log(
-          `The pair that generates the target value is [${i},${j}], "${sortedArray[i]}+ ${sortedArray[j]} = ${targetValue}"`
+          `4) The pair that generates the target value is [${i},${j}], "${sortedArray[i]}+ ${sortedArray[j]} = ${targetValue}"`
         );
       }
     }
@@ -64,19 +64,19 @@ const pairOfTargetValue = (sortedArray, targetValue) => {
 const calculateNumber = (number1, number2, operator) => {
   switch (operator) {
     case "+":
-      console.log(`${number1} + ${number2} = ${number1 + number2}`);
+      console.log(`5) ${number1} + ${number2} = ${number1 + number2}`);
       break;
     case "-":
-      console.log(`${number1} - ${number2} = ${number1 - number2}`);
+      console.log(`5) ${number1} - ${number2} = ${number1 - number2}`);
       break;
     case "*":
-      console.log(`${number1} * ${number2} = ${number1 * number2}`);
+      console.log(`5) ${number1} * ${number2} = ${number1 * number2}`);
       break;
     case "/":
-      console.log(`${number1} / ${number2} = ${number1 / number2}`);
+      console.log(`5) ${number1} / ${number2} = ${number1 / number2}`);
       break;
     default:
-      console.log("Invalid operator");
+      console.log("5) Invalid operator");
       break;
   }
 };
@@ -93,7 +93,7 @@ const passwordGenerate = (length) => {
     generatedPassword += allCharacters.charAt(randomIndex);
   }
 
-  console.log(generatedPassword);
+  console.log(`6) Password: ${generatedPassword}`);
 };
 
 // 7. Function that converts a Roman numeral to an integer. The function should take a Roman numeral string (e.g., "IX" or "XXI") as input and return the corresponding integer value.
@@ -125,13 +125,13 @@ const romanToInteger = (romanNumeral) => {
     prevValue = currentValue;
   }
 
-  console.log(`The integer value of "${romanNumeral}" is "${result}"`);
+  console.log(`7) The integer value of "${romanNumeral}" is "${result}"`);
 };
 
 // 8. Function to find the second smallest number
 const findSecondSmallest = (array) => {
   if (array.length < 2) {
-    return "Array should have at least two elements";
+    console.log("Array should have at least two elements");
   }
 
   let smallest = array[0];
@@ -152,19 +152,19 @@ const findSecondSmallest = (array) => {
   }
 
   if (secondSmallest === smallest || secondSmallest === array[1]) {
-    console.log("There is no second smallest element in the array");
+    console.log("8) There is no second smallest element in the array");
   }
 
   console.log(
-    `The second smallest number of the array [${array}] is ${secondSmallest}`
+    `8) The second smallest number of the array [${array}] is ${secondSmallest}`
   );
 };
 
-// reverseText("hello world");
-// positiveNumberSum([2, -5, 10, -3, 7]);
-// frequentlyRepeated([3, 4, 4, 5, 4, 3, 1, 4, 5]);
-// pairOfTargetValue([1, 3, 6, 8, 11, 15], 9);
-// calculateNumber(2, 9, "/");
-// passwordGenerate(10);
-// romanToInteger("xI");
+reverseText("hello world");
+positiveNumberSum([2, -5, 10, -3, 7]);
+frequentlyRepeated([3, 4, 4, 5, 4, 3, 1, 4, 5]);
+pairOfTargetValue([1, 3, 6, 8, 11, 15], 9);
+calculateNumber(2, 9, "/");
+passwordGenerate(10);
+romanToInteger("xI");
 findSecondSmallest([12, 4, 2, 7, 8, 3]);
