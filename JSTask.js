@@ -128,6 +128,38 @@ const romanToInteger = (romanNumeral) => {
   console.log(`The integer value of "${romanNumeral}" is "${result}"`);
 };
 
+// 8. Function to find the second smallest number
+const findSecondSmallest = (array) => {
+  if (array.length < 2) {
+    return "Array should have at least two elements";
+  }
+
+  let smallest = array[0];
+  let secondSmallest = array[1];
+
+  // Make sure smallest and secondSmallest are in the correct order
+  if (smallest > secondSmallest) {
+    [smallest, secondSmallest] = [secondSmallest, smallest];
+  }
+
+  for (let i = 2; i < array.length; i++) {
+    if (array[i] < smallest) {
+      secondSmallest = smallest;
+      smallest = array[i];
+    } else if (array[i] < secondSmallest && array[i] !== smallest) {
+      secondSmallest = array[i];
+    }
+  }
+
+  if (secondSmallest === smallest || secondSmallest === array[1]) {
+    console.log("There is no second smallest element in the array");
+  }
+
+  console.log(
+    `The second smallest number of the array [${array}] is ${secondSmallest}`
+  );
+};
+
 // reverseText("hello world");
 // positiveNumberSum([2, -5, 10, -3, 7]);
 // frequentlyRepeated([3, 4, 4, 5, 4, 3, 1, 4, 5]);
@@ -135,3 +167,4 @@ const romanToInteger = (romanNumeral) => {
 // calculateNumber(2, 9, "/");
 // passwordGenerate(10);
 // romanToInteger("xI");
+findSecondSmallest([12, 4, 2, 7, 8, 3]);
