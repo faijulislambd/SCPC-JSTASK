@@ -81,8 +81,23 @@ const calculateNumber = (number1, number2, operator) => {
   }
 };
 
+const passwordGenerate = (length) => {
+  const allCharacters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}|;:',.<>?";
+
+  let generatedPassword = "";
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * allCharacters.length);
+    generatedPassword += allCharacters.charAt(randomIndex);
+  }
+
+  console.log(generatedPassword);
+};
+
 // reverseText("hello world");
 // positiveNumberSum([2, -5, 10, -3, 7]);
 // frequentlyRepeated([3, 4, 4, 5, 4, 3, 1, 4, 5]);
 // pairOfTargetValue([1, 3, 6, 8, 11, 15], 9);
 // calculateNumber(2, 9, "/");
+passwordGenerate(10);
