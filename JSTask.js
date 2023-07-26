@@ -60,7 +60,29 @@ const pairOfTargetValue = (sortedArray, targetValue) => {
   }
 };
 
+// 5. Function take two numbers and an operator (+, -, *, /) as input and return the result of the operation.
+const calculateNumber = (number1, number2, operator) => {
+  switch (operator) {
+    case "+":
+      console.log(`${number1} + ${number2} = ${number1 + number2}`);
+      break;
+    case "-":
+      console.log(`${number1} - ${number2} = ${number1 - number2}`);
+      break;
+    case "*":
+      console.log(`${number1} * ${number2} = ${number1 * number2}`);
+      break;
+    case "/":
+      console.log(`${number1} / ${number2} = ${number1 / number2}`);
+      break;
+    default:
+      console.log("Invalid operator");
+      break;
+  }
+};
+
 // reverseText("hello world");
 // positiveNumberSum([2, -5, 10, -3, 7]);
 // frequentlyRepeated([3, 4, 4, 5, 4, 3, 1, 4, 5]);
-pairOfTargetValue([1, 3, 6, 8, 11, 15], 9);
+// pairOfTargetValue([1, 3, 6, 8, 11, 15], 9);
+// calculateNumber(2, 9, "/");
