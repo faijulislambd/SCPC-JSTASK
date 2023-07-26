@@ -81,6 +81,7 @@ const calculateNumber = (number1, number2, operator) => {
   }
 };
 
+// 6. Function  that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
 const passwordGenerate = (length) => {
   const allCharacters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[]{}|;:',.<>?";
@@ -95,9 +96,42 @@ const passwordGenerate = (length) => {
   console.log(generatedPassword);
 };
 
+// 7. Function that converts a Roman numeral to an integer. The function should take a Roman numeral string (e.g., "IX" or "XXI") as input and return the corresponding integer value.
+const romanToInteger = (romanNumeral) => {
+  romanNumeral = romanNumeral.toUpperCase();
+  const defaultRomanNumerals = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
+
+  let result = 0;
+  let prevValue = 0;
+
+  for (let i = romanNumeral.length - 1; i >= 0; i--) {
+    const currentSymbol = romanNumeral[i];
+    const currentValue = defaultRomanNumerals[currentSymbol];
+
+    if (currentValue < prevValue) {
+      result -= currentValue;
+    } else {
+      result += currentValue;
+    }
+
+    prevValue = currentValue;
+  }
+
+  console.log(`The integer value of "${romanNumeral}" is "${result}"`);
+};
+
 // reverseText("hello world");
 // positiveNumberSum([2, -5, 10, -3, 7]);
 // frequentlyRepeated([3, 4, 4, 5, 4, 3, 1, 4, 5]);
 // pairOfTargetValue([1, 3, 6, 8, 11, 15], 9);
 // calculateNumber(2, 9, "/");
-passwordGenerate(10);
+// passwordGenerate(10);
+// romanToInteger("xI");
