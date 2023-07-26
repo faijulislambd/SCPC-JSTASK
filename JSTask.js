@@ -46,6 +46,21 @@ const frequentlyRepeated = (numberArray) => {
   );
 };
 
+// 4. Function to find two numbers in a sorted array that add up to a target value, you can use a two-pointer approach. This approach takes advantage of the fact that the array is sorted and efficiently finds the pair of numbers that adds up to the target value.
+const pairOfTargetValue = (sortedArray, targetValue) => {
+  for (let i = 0; i < sortedArray.length; i++) {
+    for (let j = i + 1; j < sortedArray.length; j++) {
+      const sum = sortedArray[i] + sortedArray[j];
+      if (sum === targetValue) {
+        console.log(
+          `The pair that generates the target value is [${i},${j}], "${sortedArray[i]}+ ${sortedArray[j]} = ${targetValue}"`
+        );
+      }
+    }
+  }
+};
+
 // reverseText("hello world");
 // positiveNumberSum([2, -5, 10, -3, 7]);
-frequentlyRepeated([3, 4, 4, 5, 4, 3, 1, 4, 5]);
+// frequentlyRepeated([3, 4, 4, 5, 4, 3, 1, 4, 5]);
+pairOfTargetValue([1, 3, 6, 8, 11, 15], 9);
